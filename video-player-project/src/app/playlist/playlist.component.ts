@@ -3,6 +3,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { FetchVideoStreamsService } from '../services/fetch-video-streams.service';
 import { DomSanitizer} from '@angular/platform-browser';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-playlist',
@@ -36,7 +37,8 @@ export class PlaylistComponent implements OnInit {
     }
   }
 
-  constructor(private service: FetchVideoStreamsService, private sanitizer: DomSanitizer, private spinner: NgxSpinnerService)
+  constructor(private service: FetchVideoStreamsService, private sanitizer: DomSanitizer, private spinner: NgxSpinnerService,
+    private _snackBar: MatSnackBar)
   { }
  
   ngOnInit() {
@@ -48,6 +50,11 @@ export class PlaylistComponent implements OnInit {
         this.videoUrl = data[0].trailer;
         this.playVideo(this.videoUrl);
       }
+    }, error => {
+      this.spinner.hide();
+      this._snackBar.open('Error in fetching data / Bad request', 'Retry', {
+        duration: 3000,
+     });
     });
   }
 

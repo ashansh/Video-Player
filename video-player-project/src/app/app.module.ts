@@ -11,6 +11,7 @@ import { PlaylistComponent } from './playlist/playlist.component';
 import { FetchVideoStreamsService } from './services/fetch-video-streams.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { NgxSpinnerModule } from "ngx-spinner";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     PlaylistComponent
   ],
   imports: [
+    MatSnackBarModule,
     CarouselModule,
     BrowserModule,
     AppRoutingModule,
