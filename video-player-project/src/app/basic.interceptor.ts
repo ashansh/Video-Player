@@ -5,14 +5,12 @@ import { tap } from "rxjs/operators";
 
 @Injectable()
 export class BasicInterceptor implements HttpInterceptor {
-    constructor() { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // set source header for every outgoing request
-
             request = request.clone({
                 setHeaders: { 
-                    'source': 'web'
+                  'source': 'web'
                 }
             });
 
@@ -21,7 +19,7 @@ export class BasicInterceptor implements HttpInterceptor {
               event => {
                 //logging the http response to browser's console in case of a success
                 if (event instanceof HttpResponse) {
-                  console.log("api call success :", event);
+                  console.log('success')
                 }
               },
               error => {

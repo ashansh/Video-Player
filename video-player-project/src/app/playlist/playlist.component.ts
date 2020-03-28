@@ -33,7 +33,7 @@ export class PlaylistComponent implements OnInit {
       600:{
           items:4
       }
-  }
+    }
   }
 
   constructor(private service: FetchVideoStreamsService, private sanitizer: DomSanitizer, private spinner: NgxSpinnerService)
@@ -45,9 +45,7 @@ export class PlaylistComponent implements OnInit {
       if(data) {
         this.spinner.hide();
         this.slidesStore = data;
-        this.videoUrl = data[0].trailer + '?autoplay=1';
-        // this.videoUrl = this.videoUrl.replace(this.videoUrl + 'autoplay=1');
-
+        this.videoUrl = data[0].trailer;
         this.playVideo(this.videoUrl);
       }
     });
