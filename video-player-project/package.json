@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~9.0.7",
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
+    "http-server": "^0.12.1",
     "ngx-owl-carousel-o": "^3.0.0",
     "ngx-spinner": "^9.0.1",
     "rxjs": "~6.5.4",
