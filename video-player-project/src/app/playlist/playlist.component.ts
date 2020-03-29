@@ -29,7 +29,7 @@ export class PlaylistComponent implements OnInit {
     navText: ['', ''],
     responsive:{
       480:{
-          items:2
+          items:3,
       },
       600:{
           items:4

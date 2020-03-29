@@ -1,2 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@media screen and (max-width: 480px) {
+    body {
+      background-color: black;
+      margin: 2%;
+    }
+
+    .home-page {
+        color: white;
+    }
+
+    .custom-carousel {
+        width: 80% !important;
+        left: 10% !important;
+    }
+
+    .carousel-image {
+        height: 150px !important;
+    }
+
+    .name {
+        color: whitesmoke !important;
+    }
+
+   .player {
+       width: 96% !important;
+   }
+  }
